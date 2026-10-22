@@ -1,0 +1,43 @@
+{
+  "_note": "Record of the original run, kept for reference. Paths are shown relative to this repository. The hashes are of the original files. Some files in this repository differ from them: local paths were made configurable and some wording was changed. Training settings are the same.",
+  "created_at": "2026-09-07T19:36:33.798764+00:00",
+  "dataset_manifest_sha256": "9e00a0cb0dd61a1fee639899ddd8198c04b934e802012fc18a86ebbdd1aa8f3b",
+  "source_code_sha256": {
+    "tabcrew_rl/model.py": "ae3fcd994965deefa113d856389db751b94e37ffb9af1587d15130b2da3f0d48",
+    "tabcrew_rl/protocol.py": "effb2e488c0714083f2d89d139ecf0b787003e8ee21accd83c4c4f0f3efb9e7d",
+    "tabcrew_rl/reward.py": "062b2ae195867dced9e38f2fa6d41aae46ff2194f392bf437b773250d2e7888e",
+    "tabcrew_rl/data.py": "80d7ed6a4c1d9d5456344a518f57b04c275b337e595d61b0a02bb261e3b967f5",
+    "tabcrew_rl/train.py": "5f69ee5a4c1ee8e0dcfa7640e1442f68cdaefe5f9cbd2090c8032dc2ad52debb",
+    "tabcrew_rl/evaluate.py": "cc097bda472aee97c1d8325d46e1453f286e1bd04d271f743698d1529dc21607",
+    "pyproject.toml": "2fcee40b29be3cffd43fd55b8ef279c8b337cb91ad5ba62eb55359b8c18d33cf",
+    "uv.lock": "3db787672ffa1eb07f4bdcb08f978414e31b003d55db5ad4adeaaf8e0ecb2c44",
+    "experiments/early-705/run.py": "b79360091ac1aabfc0c9afbe9556d39ccf2937794d11b73c6d55890ac1cfb3b0",
+    "experiments/early-705/grpo_train.py": "df52289b5f42a25807f61bbfaf8c332319b8dd6f4a7ceed9b68214a1d21bad0d"
+  },
+  "model_snapshot": "work/models/2fc06364715b967f1860aea9cf38778875588b17",
+  "model_receipt_sha256": "3ceb2f441be2fdcb646a251e94f809e57493909e5c58a88f0b93ad694d654632",
+  "network_mode": "Hugging Face offline; existing local model and environment; no provider calls",
+  "stages": [
+    "SFT: 570 examples, one shuffled epoch, batch 1, LoRA r8, LR 2e-4",
+    "SFT validation: all 70 validation examples",
+    "GRPO: SFT initialization, at most 16 updates, four sampled completions per group",
+    "GRPO validation: same 70 validation examples",
+    "Base validation: same 70 examples"
+  ],
+  "final_test": "65 examples sealed; no final-test inference or optimization in this run",
+  "selection": "Higher validation mean reward, then exact partition rate, then validity; prefer SFT on ties",
+  "hard_stage_timeouts_seconds": {
+    "sft": 3720,
+    "sft-validation": 1800,
+    "grpo": 1020,
+    "grpo-validation": 1800,
+    "base-validation": 1800
+  },
+  "maximum_stage_time_total_seconds": 10140,
+  "provider_compute_cost_usd": 0,
+  "limitations": [
+    "Synthetic teacher references, not independent human ground truth",
+    "Teacher output-use terms for this early collection were not independently verified",
+    "Teacher labels were produced earlier by a hosted LLM; only this training is local"
+  ]
+}

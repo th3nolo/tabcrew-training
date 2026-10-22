@@ -1,0 +1,13 @@
+[project]
+name = "tabcrew-sglang-inference"
+version = "0.1.0"
+requires-python = "==3.12.*"
+dependencies = [
+  "sglang==0.5.17",
+  "cuda-tile @ https://pypi.nvidia.com/cuda-tile/cuda_tile-1.6.0rc5-cp312-cp312-manylinux2014_x86_64.whl#sha256=b74c20348210d2182cd998a0ecb60c518989a79b28592d72eb8294b38ddb93d7",
+]
+
+[tool.uv]
+package = false
+exclude-newer = "2026-09-05T00:00:00Z"
+environments = ["sys_platform == 'linux' and platform_machine == 'x86_64'"]

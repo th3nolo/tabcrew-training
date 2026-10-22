@@ -1,0 +1,7 @@
+TabCrew training code
+Copyright 2026 Manuel Parra
+
+This product is licensed under the Apache License, Version 2.0 (see LICENSE).
+
+The base model Qwen/Qwen3.5-0.8B is not included. It is downloaded separately
+and is distributed under its own license by its authors.

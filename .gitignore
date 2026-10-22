@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+
+# Local caches, virtual environment and model snapshot (see TABCREW_WORK_DIR)
+work/
+cache/
+
+# Secrets: credentials come from environment variables only
+.env*
+.secrets/
+
+# Generated data, runs and figures (regenerate them with the scripts)
+data/
+results/
+runs/
+exports/
+evidence/
+figures/
+checkpoints/
+*.safetensors
+*.pt
+*.bin
+*.log
+
+# Experiment outputs written next to the experiment code
+experiments/*/dataset/
+experiments/*/sft/
+experiments/*/grpo/
+experiments/*/*-validation/
+experiments/*/status.json
+experiments/*/run-plan.json
+experiments/*/*.receipt.json
+experiments/*/*.lock
+experiments/*/PAUSE
+data-generation/*/accepted/
+data-generation/*/rejected/
+data-generation/*/pending/
+data-generation/*/responses/
+data-generation/*/snapshots/
+data-generation/*/runs/
+data-generation/*/logs/
+data-generation/*/*.jsonl

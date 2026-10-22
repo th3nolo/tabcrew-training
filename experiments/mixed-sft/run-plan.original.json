@@ -1,0 +1,80 @@
+{
+  "_note": "Record of the original run, kept for reference. Paths are shown relative to this repository. The hashes are of the original files. Some files in this repository differ from them: local paths were made configurable and some wording was changed. Training settings are the same.",
+  "created_at": "2026-09-09T23:24:16.038407+00:00",
+  "dataset_manifest_sha256": "eedd918b3358b56c8f19042e823a21c584da43a62288a579f6a358bd310f0a3a",
+  "evaluation_manifest_sha256": "1054615518bfb8051d6866081f06d9321c4d1c7429d0d12d6c3e76c28dfc618e",
+  "source_sha256": {
+    "experiments/mixed-sft/common.py": "4629751eae30a8fa31cb7adbe89a3c5f8169a7bf78c3aca34502a44ac16d43ef",
+    "experiments/mixed-sft/prepare.py": "55d351cf47752a81bc1c03498dfa208e02306bf61309ce0687124663e29f9e5c",
+    "experiments/mixed-sft/batching.py": "7cc51ed5534396d0b3b2621ea6e11de398f2eab4dcc94fb2e4b1a2849b070cb8",
+    "experiments/mixed-sft/run.py": "4baf08882eedea2e051adb3d814966879c0153903e8f89c8746673dfd0e7488f",
+    "experiments/mixed-sft/report.py": "0bcca54c30c6a1dd30386aa81a377768895f36947d49571643848a4624123a96",
+    "tabcrew_rl/model.py": "ae3fcd994965deefa113d856389db751b94e37ffb9af1587d15130b2da3f0d48",
+    "tabcrew_rl/protocol.py": "effb2e488c0714083f2d89d139ecf0b787003e8ee21accd83c4c4f0f3efb9e7d",
+    "tabcrew_rl/reward.py": "062b2ae195867dced9e38f2fa6d41aae46ff2194f392bf437b773250d2e7888e",
+    "tabcrew_rl/evaluate.py": "cc097bda472aee97c1d8325d46e1453f286e1bd04d271f743698d1529dc21607",
+    "tabcrew_rl/data.py": "80d7ed6a4c1d9d5456344a518f57b04c275b337e595d61b0a02bb261e3b967f5",
+    "uv.lock": "3db787672ffa1eb07f4bdcb08f978414e31b003d55db5ad4adeaaf8e0ecb2c44",
+    "pyproject.toml": "2fcee40b29be3cffd43fd55b8ef279c8b337cb91ad5ba62eb55359b8c18d33cf"
+  },
+  "model": {
+    "model": "Qwen/Qwen3.5-0.8B",
+    "revision": "2fc06364715b967f1860aea9cf38778875588b17",
+    "loader": "Qwen3_5ForCausalLM",
+    "dtype": "bfloat16",
+    "missing_keys": [],
+    "ignored_non_text_keys": 0,
+    "parameters": 752393024
+  },
+  "model_receipt_sha256": "3ceb2f441be2fdcb646a251e94f809e57493909e5c58a88f0b93ad694d654632",
+  "batch_size": 4,
+  "epochs": 1,
+  "seed": 42,
+  "learning_rate": 0.0002,
+  "lora_rank": 8,
+  "lora_alpha": 16,
+  "train_count": 3030,
+  "optimizer_steps": 758,
+  "preflight": [
+    {
+      "batch_size": 4,
+      "batch_loss": 0.2450299859046936,
+      "individual_mean_loss": 0.24573595821857452,
+      "max_cuda_allocated_bytes": 5867371008,
+      "forward_backward_seconds": 13.583996300003491,
+      "passed": true
+    }
+  ],
+  "evaluation_count": 81,
+  "stages": [
+    "sft",
+    "new-validation",
+    "old-sft-validation",
+    "old-grpo-validation"
+  ],
+  "decoding": {
+    "max_new_tokens": 512,
+    "do_sample": false,
+    "thinking": false,
+    "constrained_json": false
+  },
+  "selection": "One new full-epoch SFT candidate. Compare against both original adapters on the same fixed validation sample. No new GRPO or hyperparameter search.",
+  "final_test": "Sealed. No final-test predictions or checkpoint selection.",
+  "network": "Offline cached model only; no training/evaluation API calls or external reporting",
+  "resource_policy": "Checkpoint and pause if requested, low host memory, or 180 training minutes in one launch. Resume retains optimizer and RNG state.",
+  "old_adapter_sha256": {
+    "early-705 run: sft/adapter/adapter_config.json": "4572489282b5b5fe5e0b3f9e1f3b92b6ada30f29d4f9a73bb1f2f999966ff9eb",
+    "early-705 run: sft/adapter/adapter_model.safetensors": "64cc28518fb8ba4f6ac98cc7bc88e24dd914687f1515b59ef917f489afa3e724",
+    "early-705 run: sft/adapter/chat_template.jinja": "306abaf09cf3a6c0d14128373a72925bda3d7de2616a5642804d9768c7d2f78c",
+    "early-705 run: sft/adapter/README.md": "fa4c0b783ee59460e4ece296c9bc4629192504a742de9b9e93370069342a5b2d",
+    "early-705 run: sft/adapter/tokenizer.json": "06b9509352d2af50381ab2247e083b80d32d5c0aba91c272ca9ff729b6a0e523",
+    "early-705 run: sft/adapter/tokenizer_config.json": "a6076025ef20ea49439d2a4d97fdb20949c90a20d29aea83e678f71d4baedf66",
+    "early-705 run: grpo/adapter/adapter_config.json": "fc4f2ba34434b9a8288eab401f348176dddddd99bfacbdb5b2535b301a53671d",
+    "early-705 run: grpo/adapter/adapter_model.safetensors": "dc847e875eda80bfb55f01adc14cda0ce329dc7b376e64cf0366d95f018cea83",
+    "early-705 run: grpo/adapter/chat_template.jinja": "306abaf09cf3a6c0d14128373a72925bda3d7de2616a5642804d9768c7d2f78c",
+    "early-705 run: grpo/adapter/README.md": "7770f8ce583ccf06af7c669353f1bbf0d60bbf08370e934619c14388c143203e",
+    "early-705 run: grpo/adapter/tokenizer.json": "6f32ce20dc35f57a7f9ad1eac03525bd7d30f9df8cea6507e958279cc3657706",
+    "early-705 run: grpo/adapter/tokenizer_config.json": "a6076025ef20ea49439d2a4d97fdb20949c90a20d29aea83e678f71d4baedf66",
+    "early-705 run: grpo/adapter/training_args.bin": "a166e72d60def0370741a5da9a30ee65d153c9e3a05f9d5581ce35ba3f16ddb2"
+  }
+}

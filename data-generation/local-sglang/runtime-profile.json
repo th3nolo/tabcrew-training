@@ -1,0 +1,34 @@
+{
+  "engine": "SGLang 0.5.17",
+  "teacher": "Qwen/Qwen3-4B-AWQ",
+  "workers": 4,
+  "kv_cache_tokens": 16384,
+  "context_length": 6144,
+  "compile_workers": 1,
+  "speculative_decoding": false,
+  "default_hours": 1,
+  "source_profile": "previous collector revision v15 (not included)",
+  "loader_validation": {
+    "state": "passed",
+    "model_tensor_count": 902,
+    "model_dtypes": [
+      "BF16",
+      "F16",
+      "I32"
+    ],
+    "largest_tensor_bytes": 777912320,
+    "checks": [
+      "Pinned model header validated by safetensors and the streaming parser",
+      "F16, BF16 and I32 exact bytes against independent safetensors reader",
+      "All yielded tensors remain valid after advancing iterator",
+      "Unsupported dtype rejected",
+      "Truncated file rejected"
+    ]
+  },
+  "constraints": "3 GiB commit hard stop; 256 MiB physical RAM hard stop; 1 GiB physical RAM soft floor with six-second recovery window; 6.75 GiB free physical RAM required before startup.",
+  "evidence_limit": "19/96 original passes; 22/96 after repair on the same training cases. Small posthoc diagnostic, not a guarantee of production acceptance or independently verified labels.",
+  "prior_attempts": "v12 startup stopped during transient checkpoint allocation; both original receipts and failed-run reports remain in v12.",
+  "change_from_v13": "Only GPU KV pool capacity changes from 8192 to 16384 tokens. Model, prompts, decoding, loader, four workers and resource guards are preserved.",
+  "change_from_v14": "Bounded watchdog read retries, page-aware G2 brand handling, and fresh-before-retry resume order. No inference or author/verifier prompt changes.",
+  "change_from_v15": "One durable targeted title repair before the original blind verifier; all inference and admission settings unchanged."
+}

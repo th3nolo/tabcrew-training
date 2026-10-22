@@ -1,0 +1,9 @@
+{
+  "model":"Qwen/Qwen3.5-0.8B",
+  "revision":"2fc06364715b967f1860aea9cf38778875588b17",
+  "seed":42,"max_steps":12,"max_wall_seconds":600,"max_tabs":12,
+  "max_completion_length":256,"num_generations":4,"learning_rate":0.00002,"beta":0.0,
+  "lora_r":8,"lora_alpha":16,"lora_dropout":0.0,
+  "target_modules":["q_proj","k_proj","v_proj","o_proj","gate_proj","up_proj","down_proj"],
+  "note":"Separate SFT-to-GRPO experiment. beta=0 removes the disabled-adapter base-reference mismatch; no KL regularization. At most 12 bounded local updates; inspect collapse and compare against SFT-only."
+}

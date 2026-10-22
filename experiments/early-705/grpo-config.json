@@ -1,0 +1,25 @@
+{
+  "model": "Qwen/Qwen3.5-0.8B",
+  "revision": "2fc06364715b967f1860aea9cf38778875588b17",
+  "seed": 42,
+  "max_steps": 16,
+  "max_wall_seconds": 900,
+  "max_tabs": 30,
+  "max_completion_length": 512,
+  "num_generations": 4,
+  "learning_rate": 2e-05,
+  "beta": 0.0,
+  "lora_r": 8,
+  "lora_alpha": 16,
+  "lora_dropout": 0.0,
+  "target_modules": [
+    "q_proj",
+    "k_proj",
+    "v_proj",
+    "o_proj",
+    "gate_proj",
+    "up_proj",
+    "down_proj"
+  ],
+  "note": "705-example run: after one complete SFT epoch; frozen train only; beta=0; stop on three equal-reward groups"
+}

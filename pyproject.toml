@@ -1,0 +1,26 @@
+[project]
+name = "tabcrew-rl-showcase"
+version = "0.1.0"
+description = "Auditable tab-partition rewards, GRPO experiments, and controlled evaluation"
+requires-python = ">=3.11,<3.12"
+dependencies = [
+  "torch==2.8.0+cu128",
+  "transformers==5.12.0",
+  "trl==0.29.0",
+  "peft==0.18.1",
+  "accelerate==1.12.0",
+  "datasets==4.6.1",
+  "matplotlib==3.10.8",
+]
+
+[tool.uv]
+package = false
+exclude-newer = "2026-09-03T00:00:00Z"
+
+[[tool.uv.index]]
+name = "pytorch-cu128"
+url = "https://download.pytorch.org/whl/cu128"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu128" }

@@ -1,0 +1,23 @@
+{
+  "workers": 4,
+  "port": 60647,
+  "pilot_hours": 0.5,
+  "maximum_hours": 8,
+  "preflight_free_commit_gib": 14,
+  "preflight_free_gpu_mib": 7800,
+  "stop_free_commit_gib": 3,
+  "stop_free_gpu_mib": 512,
+  "stop_gpu_temperature_c": 85,
+  "sample_seconds": 2,
+  "drain_seconds": 210,
+  "collector_heartbeat_timeout_seconds": 300,
+  "speculative_decoding": false,
+  "pilot_preflight_free_commit_gib": 14,
+  "preflight_free_ram_gib": 6.75,
+  "stop_free_ram_gib": 1,
+  "kv_cache_tokens": 16384,
+  "compile_workers": 1,
+  "default_run_hours": 1,
+  "critical_free_ram_gib": 0.25,
+  "physical_memory_grace_seconds": 6
+}
